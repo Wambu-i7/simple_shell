@@ -6,4 +6,6 @@
  */
 int main(void)
 {
-	char str [] = "my name is Emmie"
+	char str [] = "my name is Emmie";
+	char *delim = " ";
+	char *token
