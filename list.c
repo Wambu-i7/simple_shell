@@ -6,7 +6,7 @@
 
 int main(void)
 {
-	int i;
+	int i; /* loop counter */
 
 	for (i = 1; i <= 10; i++)
 	{
