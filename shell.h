@@ -18,7 +18,7 @@ int _putchar(char c);
 void environ(void);
 void exit_prog(char **c, char *input);
 char *valid_path(char **path, char *c);
-char *concat_path_cmd(char *path, char *c)
+char *concat_path_cmd(char *path, char *c);
 int builtin_func(char **c, char *input);
 void execute_command(char *c, char **args);
 void tokenization(char *input);
