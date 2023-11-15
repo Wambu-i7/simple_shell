@@ -2,11 +2,7 @@
 /**
  * environ - handles the environment variables and prints them to stdout
  * 
-<<<<<<< HEAD
- * Return: has no return value
-=======
- * Return: 0 on success.
->>>>>>> 886be66e33b755a94a3afd9ce5160df4d74c99f7
+ * Return: has no return value.
  */
 void environ(void)
 {
