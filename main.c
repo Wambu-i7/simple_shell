@@ -43,3 +43,9 @@ int main(void)
 			/*handle invalid command*/
 			fprintf(stderr, "Command not found: %s\n", tokens[0]);
 		}
+		/*free allocated memory*/
+		free(input);
+		free(tokens);
+	}
+	return (0);
+}
