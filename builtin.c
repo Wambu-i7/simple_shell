@@ -8,7 +8,7 @@
  */
 int builtin_func(char **c, char *input)
 {
-	struct builtin 	builtin_struct = {"env", "exit"};
+	struct builtin builtin_struct = {"env", "exit"};
 
 	/*check if the command is "env"*/
 	if (string_comp(*c, builtin_struct.env) == 0)
@@ -22,7 +22,7 @@ int builtin_func(char **c, char *input)
 	{
 
 		exit_prog(c, input);
-		return(1);
+		return (1);
 	}
 	return (0);
 }

@@ -14,7 +14,7 @@ void read_line(void)
 	{
 	if (isatty(STDIN_FILENO) && isatty(STDOUT_FILENO))
 	{
-	prompt ="#cisfun$ ";
+	prompt = "#cisfun$ ";
 	write(STDOUT_FILENO, prompt, string_len(prompt));
 	}
 	read = getline(&input, &len, stdin);

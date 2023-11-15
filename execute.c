@@ -13,21 +13,21 @@ void execute_command(char *c, char **args)
 
 	if (pid == -1)
 	{
-	perror("fork");
-	exit(1);
+		perror("fork");
+		exit(1);
 	}
 	else if (pid == 0)
 	{
-	if (execve(c, args, env) == -1)
-	{
-	perror("./shell");
-	free(c);
-	exit(98);
-	}
+		if (execve(c, args, env) == -1)
+		{
+			perror("./shell");
+			free(c);
+			exit(98);
+		}
 	}
 	else
 	{
-        wait(&status);
+		wait(&status);
 	}
 }
 

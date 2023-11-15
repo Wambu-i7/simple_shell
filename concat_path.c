@@ -1,6 +1,10 @@
 #include "shell.h"
-#define EXTRA_SPACE 2
-
+/**
+ * concat_path_cmd - concatenates command to path
+ * @path: path to the command
+ * @c: the command
+ * Return: concatenated string
+ */
 char *concat_path_cmd(char *path, char *c)
 {
 	char *buffer;
@@ -10,7 +14,7 @@ char *concat_path_cmd(char *path, char *c)
 		c = "";
 	if (path == 0)
 		path = "";
-	buffer = malloc(sizeof(char) * (string_len(path) + string_len(c) + EXTRA_SPACE))
+	buffer = malloc(sizeof(char) * (string_len(path) + string_len(c) + 2))
 	if (!buffer)
 		return (NULL);
 	while (path[a])

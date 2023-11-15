@@ -1,4 +1,4 @@
-#include 'shell.h"
+#include "shell.h"
 /**
  *string_comp - compares two strings.
  *@str1: compared to str2.
@@ -9,7 +9,7 @@ int string_comp(char *str1, char *str2)
 {
 	int j = 0, result;
 
-	while(*(str1 + j) == *(str2 + j) && *(str1 + j) != '\0')
+	while (*(str1 + j) == *(str2 + j) && *(str1 + j) != '\0')
 		j++;
 	result = (*(str1 + j) - *(str2 + j));
 
@@ -59,7 +59,7 @@ char string_dup(char *str)
 	char *pointer;
 	int j, length;
 
-	if(str == NULL)
+	if (str == NULL)
 		return (NULL);
 	length = string_len(str);
 	pointer = malloc(sizeof(char) * (length + 1));
@@ -88,4 +88,4 @@ char *string_find_char(char *str, char chr)
 	if (!chr)
 		return (str);
 	return (NULL);
-}	
+}

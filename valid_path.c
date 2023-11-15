@@ -14,7 +14,7 @@ char *valid_path(char **path, char *c)
 
 	while (path[j])
 	{
-		result = concat-path_cmd(path[j], c);
+		result = concat_path_cmd(path[j], c);
 		if (access(result, F_OK | X_OK) == 0)
 			return (result);
 		free(result);
