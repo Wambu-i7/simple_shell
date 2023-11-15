@@ -24,6 +24,12 @@ int builtin_func(char **c, char *input);
 void execute_command(char *c, char **args);
 void tokenization(char *input);
 void read_line(void);
+int string_comp(char *str1, char *str2);
+char string_cpy(char *dest, char *src);
+int string_len(char *str);
+char string_dup(char *str);
+char *string_find_char(char *str, char chr);
+
 
 /**
  * struct builtin builtin_struc - check for builtins.
