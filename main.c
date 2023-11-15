@@ -37,3 +37,9 @@ int main(void)
 			/*execute the command*/
 			execute_command(command, tokens);
 			free(command);
+		}
+		else
+		{
+			/*handle invalid command*/
+			fprintf(stderr, "Command not found: %s\n", tokens[0]);
+		}
