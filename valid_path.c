@@ -11,12 +11,14 @@ char *valid_path(char **path, char *c)
 {
 	int j = 0;
 	char *result;
-
+/* iterate through each path in the array*/
 	while (path[j])
 	{
+	/*concatenate the current path and command*/
 		result = concat_path_cmd(path[j], c);
+	/*check if the concatenated path and command is a valid executable*/
 		if (access(result, F_OK | X_OK) == 0)
-			return (result);
+			return (result);/*if valid, return results*/
 		free(result);
 		j++;
 	}
