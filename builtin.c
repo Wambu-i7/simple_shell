@@ -1,4 +1,4 @@
-#include "shell.c"
+#include "shell.h"
 /**
  * builtin_func  - checks the built in functions
  * @c: commands that have been tokenized
