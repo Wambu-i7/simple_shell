@@ -13,7 +13,7 @@ int builtin_func(char **c, char *input)
 	/*check if the command is "env"*/
 	if (string_comp(*c, builtin_struct.env) == 0)
 	{
-	/*execute environ() function to display environment variables*/
+	/*execute environ_var function to display environment variables*/
 		char **environ_var = environ;
 		while (*environ_var != NULL)
 		{
@@ -21,7 +21,7 @@ int builtin_func(char **c, char *input)
 		}
 		return (1);
 	}
-	/*check if command is exit*/
+	/*check if the command is "exit"*/
 	else if (string_comp(c, builtin.exit) == 0)
 	{
 
