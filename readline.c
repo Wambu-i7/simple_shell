@@ -5,10 +5,10 @@
  */
 void read_line(void)
 {
-	char *input = NULL;
-	size_t len = 0;
-	ssize_t read;
-	const char *prompt;
+	char *input = NULL;/*buffer that stores input line*/
+	size_t len = 0;/*length of input line*/
+	ssize_t read;/*nuber of characters read*/
+	const char *prompt;/*prompt string to be displayed*/
 
 	while (1)
 	{
@@ -22,12 +22,12 @@ void read_line(void)
 	{
 		if (feof(stdin))
 		{
-		break;
+			break;
 		}
 		else
 		{
-		perror("getline");
-		break'
+			perror("getline");
+			break;
 		}
 	free(input);
 	input = NULL;
