@@ -41,7 +41,9 @@ int main(void)
 		else
 		{
 			/*handle invalid command*/
-			fprintf(stderr, "Command not found: %s\n", tokens[0]);
+			write(STDERR_FILENO, "Command not found: ", 19);
+			write(STDERR_FILENO, tokens[0], string_len(tokens[0]));
+			write(STDERR_FILENO, "\n", 1);
 		}
 		/*free allocated memory*/
 		free(input);
