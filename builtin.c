@@ -14,7 +14,11 @@ int builtin_func(char **c, char *input)
 	if (string_comp(*c, builtin_struct.env) == 0)
 	{
 	/*execute environ() function to display environment variables*/
-		environ();
+		char **environ_var = environ;
+		while (*environ_var != NULL)
+		{
+			printf("%s\n", *environ_var);
+		}
 		return (1);
 	}
 	/*check if command is exit*/
