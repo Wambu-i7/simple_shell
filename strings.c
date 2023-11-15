@@ -5,7 +5,7 @@
  *@str2: compared to str1.
  * Return: returns the difference between the two strings.
  */
-int string_comp(char *str1, cha *str2)
+int string_comp(char *str1, char *str2)
 {
 	int j = 0, result;
 
