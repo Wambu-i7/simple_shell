@@ -7,6 +7,9 @@
  */
 void exit_prog(char **c, char *input)
 {
+	(void)c;
+	(void)input;
+
 	free(input);
 	exit(0);
 }
