@@ -22,7 +22,7 @@ int builtin_func(char **c, char *input)
 		return (1);
 	}
 	/*check if the command is "exit"*/
-	else if (string_comp(c, builtin.exit) == 0)
+	else if (string_comp(c, builtin_struct.exit) == 0)
 	{
 
 		exit_prog(c, input);
