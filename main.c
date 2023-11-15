@@ -35,3 +35,5 @@ int main(void)
 		if(command != NULL)
 		{
 			/*execute the command*/
+			execute_command(command, tokens);
+			free(command);
