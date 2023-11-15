@@ -2,7 +2,7 @@
 /**
  * environ - handles the environment variables
  * 
- * Return: 0
+ * Return: 0 on success.
  */
 void environ(void)
 {
