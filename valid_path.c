@@ -19,8 +19,8 @@ char *valid_path(char **path, char *c)
 	/*check if the concatenated path and command is a valid executable*/
 		if (access(result, F_OK | X_OK) == 0)
 			return (result);/*if valid, return results*/
-		free(result);
+		free(result);/*free the allocated memory*/
 		j++;
 	}
-	return (NULL);
+	return (NULL);/*if no valid path is found,return NULL*/
 }
