@@ -11,36 +11,38 @@ int main(void) {
     char *command;
 
     while (1) {
-        // Read input
+        /* Read input */
         read_line(&input);
 
-        // Tokenize input
+        /* Tokenize input */
         tokens = tokenization(input);
 
-        // Check for built-in commands
-        if (builtin_func(tokens, input)) {
-            // If it's a built-in command, continue to the next iteration of the loop
+        /* Check for built-in commands */
+        if (builtin_func(tokens, input))
+       	{
             free(input);
             free(tokens);
             continue;
         }
 
-        // Find the PATH
+        /* Find the PATH */
         path = find_path();
-
-        // Validate the path and get the full command path
         command = valid_path(path, tokens[0]);
 
-        if (command != NULL) {
-            // Execute the command
+        if (command != NULL)
+       	{
             execute_command(command, tokens);
             free(command);
-        } else {
-            // Handle invalid command
-            fprintf(stderr, "Command not found: %s\n", tokens[0]);
+        }
+       	else
+       	{
+     
+            write(STDERR_FILENO, "Command not found: ", 19);
+            write(STDERR_FILENO, tokens[0], string_len(tokens[0]));
+            write(STDERR_FILENO, "\n", 1);
         }
 
-        // Free allocated memory
+        /* Free allocated memory */
         free(input);
         free(tokens);
     }
