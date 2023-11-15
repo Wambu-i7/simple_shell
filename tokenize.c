@@ -6,9 +6,9 @@
  *  string containing the next token or NULL if no more tokens
  *  are found.
  */
-void tokenization(char *input, char *args[])
+void execute_command(char *command);
+void tokenization(char *input)
 {
-	int i = 0;
 	char *token;
 
 	token = strtok(input, " ");
@@ -16,8 +16,7 @@ void tokenization(char *input, char *args[])
 
 	while (token != NULL)
 	{
-	args[i++] = token;
+	execute_command(input);
 	token = strtok(NULL, " ");
 	}
-	args[i] = NULL;
 }

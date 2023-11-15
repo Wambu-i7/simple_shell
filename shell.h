@@ -7,7 +7,7 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 void execute_command(char *command);
-void tokenization(char *input, char *args[]);
+void tokenization(char *input);
 void read_line(void);
 #define MAX_ARGS 64
 #define MAX_LENGTH 1024
