@@ -6,7 +6,7 @@
  *  string containing the next token or NULL if no more tokens
  *  are found
  */
-char tokenization(char *input)
+char **tokenization(char *input)
 {
 	char **string_array;
 	char *token;
@@ -35,5 +35,6 @@ char tokenization(char *input)
 	}
 	/*set last element of array to a NULL*/
 	string_array[i] = NULL;
+
 	return (string_array);
 }
