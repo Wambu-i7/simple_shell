@@ -17,13 +17,22 @@ char *find_path(void)
 		{
 		/*store pointer to beggining of PATH string*/
 			path = *env;
-			while (*path && i < PATH_LENGTH)
+			/*find length of the PATH string*/
+			while (*path && *path != '=')
 			{
 				path++;
 				i++;
 			}
-		/*return pointer to beggining of PATH string*/
-			return (path);
+			if (i < PATH_LENGTH)
+			{
+			/*return pointer to beggining of PATH string*/
+				return (path + 1);
+			}
+			else
+			{
+				/*handle case where PATH string is too long*/
+				return NULL;
+			}
 		}
 		env++;
 	}
