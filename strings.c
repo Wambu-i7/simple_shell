@@ -1,8 +1,8 @@
 #include "shell.h"
 /**
  *string_comp - compares two strings.
- *@str1: compared to str2.
- *@str2: compared to str1.
+ *@str1: compare to str2.
+ *@str2: compare to str1.
  * Return: returns the difference between the two strings.
  */
 int string_comp(char *str1, char *str2)
@@ -36,7 +36,7 @@ int string_len(char *str)
  *  @dest: Destination of the copied string.
  *  Return: pointer to dest.
  */
-char string_cpy(char *dest, char *src)
+void string_cpy(char *dest, char *src)
 {
 	int a, b = 0;
 
@@ -46,28 +46,31 @@ char string_cpy(char *dest, char *src)
 		b++;
 	}
 	dest[b] = '\0';
-
-	return (dest);
 }
 /**
  * string_dup -duplicates a string.
  * @str: string to be duplicated.
  * Return: pointer to the duplicated string.
  */
-char string_dup(char *str)
+char *string_dup(char *str)
 {
 	char *pointer;
 	int j, length;
 
 	if (str == NULL)
+	{
 		return (NULL);
+	}
+
 	length = string_len(str);
 	pointer = malloc(sizeof(char) * (length + 1));
 	if (!pointer)
+	{
 		return (NULL);
-	for (j = 0; str != '\0'; str++, j++)
-		pointer[j] = str[0];
-	pointer[j++] = '\0';
+	}
+	for (j = 0; str[j] != '\0'; str++, j++)
+		pointer[j] = str[j];
+	pointer[j] = '\0';
 	return (pointer);
 }
 /**
@@ -86,6 +89,8 @@ char *string_find_char(char *str, char chr)
 		str++;
 	}
 	if (!chr)
+	{
 		return (str);
+	}
 	return (NULL);
 }
