@@ -3,33 +3,33 @@
  * read_line - Reads a line from user input.
  * Returns: Returns the number of characters read.
  */
-void tokenization(char *input);
 void read_line(void)
 {
 	char *input = NULL;
 	size_t len = 0;
 	ssize_t read;
+	const char *prompt;
 
 	while (1)
 	{
-	printf("#cisfun$ ");
+	if (isatty(STDIN_FILENO) && isatty(STDOUT_FILENO))
+	{
+	prompt ="#cisfun$ ";
+	write(STDOUT_FILENO, prompt, string_len(prompt));
+	}
 	read = getline(&input, &len, stdin);
-	if (read > 0 && input[read - 1] == '\n')
+	if (read == -1)
 	{
-		input[read - 1] = '\0';
-	}
-	if (read != -1)
-	{
-	tokenization(input);
-	}
-	else
-	{
-	(feof(stdin));
-	{
-	printf("exit\n\n\n\n[Disconnected.....]\n");
-	}
-	exit(1);
-	}
-	}
+		if (feof(stdin))
+		{
+		break;
+		}
+		else
+		{
+		perror("getline");
+		break'
+		}
 	free(input);
+	input = NULL;
+	len = 0;
 }
