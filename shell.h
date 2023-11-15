@@ -11,4 +11,7 @@ void tokenization(char *input);
 void read_line(void);
 #define MAX_ARGS 64
 #define MAX_LENGTH 1024
+#define EXTRA_SPACE 2
+void environ(void);
+char *concat_path_cmd(char *path, char *c);
 #endif
