@@ -14,7 +14,7 @@ char *concat_path_cmd(char *path, char *c)
 		c = "";
 	if (path == 0)
 		path = "";
-	buffer = malloc(sizeof(char) * (string_len(path) + string_len(c) + 2))
+	buffer = malloc(sizeof(char) * (string_len(path) + string_len(c) + 2));
 	if (!buffer)
 		return (NULL);
 	while (path[a])
