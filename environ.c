@@ -6,7 +6,7 @@
 void environ(void)
 {
 	int i = 0;
-	char **env = envp/*a pointer to environment variables*/
+	char **env = envp;/*a pointer to environment variables*/
 /*loop through the variables*/
 	while (env[i] != NULL)
 	{
