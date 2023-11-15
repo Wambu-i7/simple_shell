@@ -22,16 +22,18 @@ void read_line(void)
 	read = getline(&input, &len, stdin);
 	if (read == -1)
 	{
+		/*if end of file is reached,exit the loop*/
 		if (feof(stdin))
 		{
 			break;
 		}
 		else
 		{
+		/*if there is an erroe, print eror message*/
 			perror("getline");
 			break;
 		}
-	free(input);
-	input = NULL;
-	len = 0;
+	free(input);/*free space after using*/
+	input = NULL;/*set pointer to null*/
+	len = 0;/*reset the length to 0*/
 }
