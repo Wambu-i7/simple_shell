@@ -1,10 +1,14 @@
 #include "shell.h"
-
-void execute_command(char *command)
+/**
+* execute_command - executes commands entered.
+* @c: Command entered.
+* @args: Array of pointers to commands.
+* Return: 0
+*/
+void execute_command(char *c, char **args)
 {
-	char *args[MAX_ARGS];
-	char *envp[] = {NULL};
-
+	char **env = envp;
+	int status;
 	pid_t pid = fork();
 
 	if (pid == -1)
@@ -14,15 +18,16 @@ void execute_command(char *command)
 	}
 	else if (pid == 0)
 	{
-	if (execve(args[0], args, envp) == -1)
+	if (execve(c, args, env) == -1)
 	{
 	perror("./shell");
-	exit(1);
+	free(c);
+	exit(98);
 	}
 	}
 	else
 	{
-        wait(NULL);
+        wait(&status);
 	}
 }
 
