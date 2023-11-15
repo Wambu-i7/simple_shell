@@ -1,5 +1,6 @@
 #ifndef SHELL_H
 #define SHELL_H
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -13,8 +14,8 @@
 #define MAX_LENGTH 1024
 #define EXTRA_SPACE 2
 #define PATH_LENGTH 5
-int _putchar(char c);
 
+int _putchar(char c);
 void environ(void);
 void exit_prog(char **c, char *input);
 char *valid_path(char **path, char *c);
