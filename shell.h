@@ -16,7 +16,6 @@
 int _putchar(char c);
 
 void environ(void);
-
 void exit_prog(char **c, char *input);
 char *valid_path(char **path, char *c);
 char *concat_path_cmd(char *path, char *c)
@@ -44,4 +43,4 @@ struct builtin
 } builtin_struct;
 
 /* Handle strings */
-#endif
+#endif /*SHELL_H*/
