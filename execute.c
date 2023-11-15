@@ -32,5 +32,5 @@ void execute_command(char *c, char **args)
 		/*parent process*/
 		wait(&status);/*waiting for child process to complete*/
 	}
+	free(c);
 }
-
