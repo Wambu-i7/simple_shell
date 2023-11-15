@@ -7,17 +7,18 @@
 */
 void execute_command(char *c, char **args)
 {
-	char **env = envp;
-	int status;
-	pid_t pid = fork();
+	char **env = envp;/*array of env variables*/
+	int status;/*status of child process*/
+	pid_t pid = fork();/*fork to create new,child process*/
 
-	if (pid == -1)
+	if (pid == -1)/*check if fork system call is succesful*/
 	{
 		perror("fork");
 		exit(1);
 	}
 	else if (pid == 0)
 	{
+		/*child process*/
 		if (execve(c, args, env) == -1)
 		{
 			perror("./shell");
