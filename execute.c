@@ -7,7 +7,7 @@
 */
 void execute_command(char *c, char **args)
 {
-	char **env = envp;/*array of env variables*/
+	char **env = envp;/*array of environment variables*/
 	int status;/*status of child process*/
 	pid_t pid = fork();/*fork to create new,child process*/
 
@@ -18,7 +18,7 @@ void execute_command(char *c, char **args)
 	}
 	else if (pid == 0)
 	{
-		/*child process*/
+		/*the child process*/
 		if (execve(c, args, env) == -1)
 		{
 			/*execute command in the child process*/
@@ -29,7 +29,7 @@ void execute_command(char *c, char **args)
 	}
 	else
 	{
-		/*parent process*/
+		/*the parent process*/
 		wait(&status);/*waiting for child process to complete*/
 	}
 	free(c);
