@@ -30,7 +30,7 @@ char **tokenization(char *input)
 			perror("Memory allocation failed");
 			exit(1);
 		}
-		i++;
+		i++;/*increment*/
 		token = strtok(NULL, " \n");
 	}
 	/*set last element of array to a NULL*/
